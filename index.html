@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>(Simple Inventory System)نظام جرد مبسط</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body dir="rtl" id="myPage">
+    <!-- ==================== -->
+    <div id="warnMsg">
+      <div class="contain">
+        <h2>رسالة خطأ</h2>
+        <p>
+          لا يمكنك ترك احد الحقول فارغة، عليك ملئ جميع بيانات المنتج قبل حفظه
+        </p>
+        <button onclick="warnMe()" id="btnMsg">موافق</button>
+      </div>
+    </div>
+    <!-- ==================== -->
+
+    <div class="inventory">
+      <div class="head">
+        <h2>نظام الجرد المبسط</h2>
+        <p>
+          Lorem dicta sint pariatur vero. Aspernatur, assumenda fuga animi odit
+          molestias repellendus!
+        </p>
+      </div>
+      <!-- =========================-_-_-_-_-_-=============================== -->
+      <div class="divide"></div>
+      <!-- =========================-_-_-_-_-_-=============================== -->
+      <div class="inputs">
+        <div class="inputsBlock">
+          <input type="text" id="itemName" placeholder="إسم الصنف" />
+          <!-- <input type="number" min="0" id="firstNum" placeholder="العدد الأصلي"> -->
+          <input
+            onkeyup="getAllBuyPri(),
+            getAllSellPri()"
+            type="number"
+            min="0"
+            id="currentNum"
+            placeholder="العدد المتبقي"
+          />
+          <input
+            onkeyup="getAllBuyPri(),
+            getSingaleProf()"
+            type="number"
+            min="0"
+            id="firstPri"
+            placeholder="سعر الشراء"
+          />
+          <input
+            onkeyup="getAllSellPri(),
+            getSingaleProf()"
+            type="number"
+            min="0"
+            id="secondPri"
+            placeholder="سعر البيع"
+          />
+        </div>
+        <div class="resultsBlock">
+          <small id="allBuyPri"></small>
+          <small id="allSellPri"></small>
+          <small id="ItemProfite"></small>
+          <small id="totalProfite"></small>
+        </div>
+        <button id="submit">حفظ المنتج</button>
+      </div>
+      <!-- =========================-_-_-_-_-_-=============================== -->
+      <div class="divide"></div>
+      <!-- =========================-_-_-_-_-_-=============================== -->
+      <div class="outputs">
+        <div id="deleteAll"></div>
+        <table id="tAll">
+          <tr>
+            <th>رقم</th>
+            <th>الصنف</th>
+            <th>المتبقي</th>
+            <th>سعر الشراء</th>
+            <th>سعر البيع</th>
+            <th>الربح المفرد</th>
+            <th>الربح الكلي</th>
+            <th>تعديل</th>
+            <th>حذف</th>
+          </tr>
+          <tbody id="tBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

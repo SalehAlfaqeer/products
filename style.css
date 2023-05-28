@@ -1,0 +1,151 @@
+@font-face {
+    src: url(Bahij_TheSansArabic-Bold_0.ttf);
+    font-family: bahij;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: bahij;
+}
+#warnMsg {
+    display: none;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.76);
+}
+#warnMsg .contain {
+    width: 30%;
+    padding: 30px;
+    margin: auto;
+    border: 1px solid rgb(0, 204, 255);
+    border-radius: 4px;
+    background: #777;
+}
+#warnMsg p {
+    margin: 20px;
+}
+
+.inventory {
+    width: 80%;
+    margin: auto;
+    font-weight: bolder;
+}
+.head {
+    text-align: center;
+    margin: 30px;
+}
+input {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: 1px solid rgb(0, 204, 255);
+    border-radius: 4px;
+    margin: 5px;
+    padding: 5px 8px;
+    transition: .5s;
+}
+input:focus {
+    transform: scale(1.06);
+    font-size: 16px;
+    font-weight: bolder;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: #888 1px 1px 8px;
+    background: rgb(7, 180, 211);
+    transition: .5s;
+    font-weight: bold;
+}
+button:hover {
+    transform: scale(1.03);
+}
+#update:hover, #submit:hover, #printBtn:hover {
+    background: rgb(5, 192, 21);
+}
+#delete:hover, #deleteAllBtn:hover {
+    background: rgb(201, 14, 14);
+}
+.inputsBlock {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+.resultsBlock {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin: 20px 0;
+}
+.resultsBlock small {
+    width: 100%;
+    height: 40px;
+    background: #AAA;
+    border-radius: 4px;
+    line-height: 30px;
+    padding: 5px;
+    /* font-size: 15px; */
+}
+#allBuyPri::before {
+    content: "سعر الشراء:                                                               ";
+}
+#allSellPri::before {
+    content: "سعر البيع:";
+}
+#ItemProfite::before {
+    content: "الربح المفرد:";
+}
+#totalProfite::before {
+    content: "الربح الكلي: ";
+}
+.divide {
+    background: rgb(7, 180, 211);
+    height: 4px;
+    margin: 20px 0;
+}
+table {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+td {
+    padding: 4px;
+    width: 20px;
+}
+
+#deleteAll {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+
+@media print {
+    .head p, .divide, .inputs, button, th:nth-child(8), th:nth-child(9) {
+        visibility: hidden;
+        display: none;
+    }
+    #tAll {
+        width: 120%;
+        padding: 0;
+        margin: 0;
+    }
+    th {
+        margin-top: 50px;
+        width: 100px;
+    }
+}
